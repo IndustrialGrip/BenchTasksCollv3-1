@@ -1,83 +1,74 @@
 # Final Pool - Implemented Tasks
 
-This directory contains all tasks that have been implemented by developers in the BenchTasksCollv3 project.
+This directory contains the tasks that are **verified as implemented** by developers in the BenchTasksCollv3 project, together with the tasks that are still being implemented.
 
-## Overview
+## How a task was classified
 
-The following tasks have been implemented by various developers. Each task is located in its respective developer's folder under `tasks/{developer_name}/{task_name}`.
+A task is counted as `implemented` only when its directory on the developer branch satisfies the example task template in `tasks/examples/example-task`, i.e. it contains **all** of:
 
-## New Tasks by Developer (Most Recent Commits)
+- `docs/agent_system_prompt.md`
+- `docs/task.md`
+- `docs/user_system_prompt.md`
+- `evaluation/main.py`
+- `preprocess/main.py`
+- `initial_workspace/readme.txt`
+- `groundtruth_workspace/readme.txt`
 
-### fan-dev (2025-09-07)
-- **loyalty-program** - Loyalty program management system
-- **discount-calculator** - Discount calculation utilities
+On top of that, the content requirements stated in the example task apply: `docs/task.md`, `docs/agent_system_prompt.md` and `docs/user_system_prompt.md` must be **non-empty and written entirely in English** (no Chinese).
 
-### gyy (2025-09-06)
-- **tag-manager** - Tag management system
-- **sitemap-generator** - Sitemap generation utilities
-- **robots-handler** - Robots.txt handler
+Any task that is missing one of those files, or whose docs contain Chinese text, is counted as `implementing`.
 
-### haoze (2025-09-06)
-- **media-organizer** - Media file organization system
-- **streaming-service** - Streaming service management
+(The template's own root `readme.txt` is not counted: no task directory under any developer branch contains one, so it is not part of the task contract.)
 
-### jl_dev (2025-09-06)
-- **customer-feedback-processor** - Customer feedback processing system
-- **inventory-management** - Inventory management system
+## Verified implemented tasks (5)
 
-### junteng_dev (2025-09-07)
-- **customer-portal** - Customer portal system
-- **help-desk** - Help desk management system
+The files of these tasks are copied verbatim into `tasks/finalpool/<task_name>/`.
 
-### junxian_dev (2025-09-06)
-- **currency-converter** - Currency conversion utilities
-- **social-connector** - Social media connector system
+| Task | Implementor | Source on developer branch |
+| --- | --- | --- |
+| tag-manager | gyy | tasks/gyy/tag-manager |
+| robots-handler | gyy | tasks/gyy/robots-handler |
+| media-organizer | haoze | tasks/haoze/media-organizer |
+| social-connector | junxian_dev | tasks/junxian/social-connector |
+| client-portal | lueyang-dev | tasks/lueyang/client-portal |
 
-### lueyang-dev (2025-09-07)
-- **territory-manager** - Territory management system
-- **client-portal** - Client portal system
+## Verified implementing tasks (24)
 
-### lv (2025-09-06)
-- **survey-builder** - Survey creation and management
-- **analytics-dashboard** - Analytics dashboard system
-- **insights-engine** - Data insights engine
+These were added by the most recent task-adding commit on their developer branch, but they do **not** satisfy the requirements yet.
 
-### ruige (2025-09-06)
-- **web-crawler** - Web crawling utilities
-- **log-analyzer** - Log analysis system
+| Task | Implementor | Blocker |
+| --- | --- | --- |
+| discount-calculator | fan-dev | missing docs/user_system_prompt.md, initial_workspace/readme.txt, groundtruth_workspace/readme.txt |
+| loyalty-program | fan-dev | missing preprocess/main.py, initial_workspace/readme.txt |
+| sitemap-generator | gyy | missing evaluation/main.py |
+| streaming-service | haoze | missing initial_workspace/readme.txt, preprocess/main.py |
+| customer-feedback-processor | jl_dev | missing docs/user_system_prompt.md, preprocess/main.py |
+| inventory-management | jl_dev | missing docs/user_system_prompt.md, initial_workspace/readme.txt, preprocess/main.py |
+| customer-portal | junteng_dev | missing evaluation/main.py |
+| help-desk | junteng_dev | missing initial_workspace/readme.txt |
+| currency-converter | junxian_dev | docs/task.md contains a Chinese section, so it is not all English |
+| territory-manager | lueyang-dev | missing initial_workspace/readme.txt, preprocess/main.py |
+| analytics-dashboard | lv | missing groundtruth_workspace/readme.txt, initial_workspace/readme.txt, preprocess/main.py |
+| insights-engine | lv | docs/agent_system_prompt.md contains a Chinese section, so it is not all English |
+| survey-builder | lv | missing docs/user_system_prompt.md, groundtruth_workspace/readme.txt, preprocess/main.py |
+| log-analyzer | ruige | missing docs/user_system_prompt.md, groundtruth_workspace/readme.txt |
+| web-crawler | ruige | missing docs/user_system_prompt.md, groundtruth_workspace/readme.txt, preprocess/main.py |
+| cache-optimizer | wenshuo-dev | missing docs/user_system_prompt.md, initial_workspace/readme.txt, groundtruth_workspace/readme.txt |
+| scheduler | wenshuo-dev | missing groundtruth_workspace/readme.txt, preprocess/main.py |
+| health-monitor | xiaochen_dev | missing docs/user_system_prompt.md |
+| status-checker | xiaochen_dev | missing initial_workspace/readme.txt, groundtruth_workspace/readme.txt |
+| sync-service | yuxuan-dev | missing groundtruth_workspace/readme.txt, preprocess/main.py |
+| audit-logger | yuzhen-dev | docs/agent_system_prompt.md contains a Chinese section, so it is not all English |
+| resource-monitor | yuzhen-dev | docs/agent_system_prompt.md contains a Chinese section, so it is not all English |
+| certificate-manager | zhaochen | missing docs/user_system_prompt.md, initial_workspace/readme.txt, groundtruth_workspace/readme.txt, preprocess/main.py |
+| storage-manager | zhaochen | missing docs/user_system_prompt.md, initial_workspace/readme.txt, groundtruth_workspace/readme.txt, preprocess/main.py |
 
-### wenshuo-dev (2025-09-06)
-- **cache-optimizer** - Cache optimization system
-- **scheduler** - Task scheduler system
+## Source
 
-### xiaochen_dev (2025-09-07)
-- **status-checker** - Status checking system
-- **health-monitor** - Health monitoring utilities
+The 29 tasks above come from the most recent task-adding commit on each developer branch of `toolathlon/BenchTasksCollv3`:
 
-### yuxuan-dev (2025-09-06)
-- **sync-service** - Synchronization service
+`fan-dev`, `gyy`, `haoze`, `jl_dev`, `junteng_dev`, `junxian_dev`, `lueyang-dev`, `lv`, `ruige`, `wenshuo-dev`, `xiaochen_dev`, `yuxuan-dev`, `yuzhen-dev`, `zhaochen`
 
-### yuzhen-dev (2025-09-07)
-- **audit-logger** - Audit logging system
-- **resource-monitor** - Resource monitoring utilities
+(yuxuan-dev's commit message reads `Work on 2 tasks: sync-service,` with an empty second name, and only the `sync-service` directory was actually created.)
 
-### zhaochen (2025-09-06)
-- **certificate-manager** - Certificate management system
-- **storage-manager** - Storage management utilities
-
-## Task Requirements
-
-Each task should include the following files (as per the example task template):
-- `docs/agent_system_prompt.md` - Agent system prompt
-- `docs/task.md` - Task documentation
-- `docs/user_system_prompt.md` - User system prompt (some tasks)
-- `evaluation/main.py` - Evaluation script
-- `preprocess/main.py` - Preprocessing script
-- `groundtruth_workspace/readme.txt` - Ground truth workspace info (some tasks)
-
-## Status
-
-All tasks listed above are considered **implemented** as they exist in their respective developer branches with complete task structures.
-
----
-*Generated from developer branches: fan-dev, gyy, haoze, jl_dev, junteng_dev, junxian_dev, lueyang-dev, lv, ruige, wenshuo-dev, xiaochen_dev, yuxuan-dev, yuzhen-dev, zhaochen*
+The same statuses are mirrored on the **Task Tracker** Notion page.
